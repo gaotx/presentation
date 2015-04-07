@@ -57,6 +57,7 @@
 					<h2>Contents</h2>
 					<ul>
 						<li class="fragment highlight-blue">Motivation</li>
+						<li>Introduction</li>
 						<li>Methodology</li>
 						<li>Experimental results</li>
 						<li>Conclusion and future research</li>
@@ -103,6 +104,138 @@
 					<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
+						<li class="fragment highlight-blue">Introduction</li>
+						<li>Methodology</li>
+						<li>Experimental results</li>
+						<li>Conclusion and future research</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Contents</h2>
+					<ul>
+						<li>Motivation</li>
+						<li><span style="color:#1b91ff;">Introduction </span>
+							<ul>
+								<li class="fragment highlight-blue">Classifier - Decision tree</li>
+								<li>Assess metrics</li>
+								<li>Nature of problem</li>
+							</ul>
+						</li>
+						<li>Methodology</li>
+						<li>Experimental results</li>
+						<li>Conclusion and future research</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Classifier</h2>
+						<p>Assign a class label to previously unseen data based on learning from given data.</p>
+					</section>
+
+					<section>
+						<h2>Decision Tree</h2>
+						<img height="550px" data-src="img/weather_example.png">
+					</section>
+				</section>
+
+				<section>
+					<h2>Contents</h2>
+					<ul>
+						<li>Motivation</li>
+						<li><span style="color:#1b91ff;">Introduction</span>
+							<ul>
+								<li>Classifier - Decision tree</li>
+								<li class="fragment highlight-blue">Assess metric</li>
+								<li>Nature of problem</li>
+							</ul>
+						</li>
+						<li>Methodology</li>
+						<li>Experimental results</li>
+						<li>Conclusion and future research</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Assess metric</h2>
+					<table>
+						<caption>Confusion Matrix</caption>
+						<thead>
+							<tr>
+								<th></th>
+								<th>Predicted +</th>
+								<th>Predicted -</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Actural +</th>
+								<td>True Positive (TP)</td>
+								<td>False Negative (FN)</td>
+							<tr>
+							<tr>
+								<th>Actural -</th>
+								<td>False Positive (FP)</td>
+								<td>True Negative (TN)</td>
+							<tr>
+						</tbody>
+					</table>
+					<P>Cut-off value is <strong>0.5</strong></P>
+				</section>
+
+				<section>
+					<h2>Assess metric</h2>
+					<p>Accuracy = (TP + TN) / (TP + TN + FN + FP)</p>
+				</section>
+
+				<section>
+					<h2>Assess metric</h2>
+					<p>TPR = TP / (TP + FN)</p>
+					<p>FPR = FP / (FP + TN)</p>
+				</section>
+
+				<section>
+					<h2>ROC & AUC</h2>
+					<img data-src="img/10thROC.png">
+					<p>Cut-off values are from 0 to 1.</p>
+				</section>
+
+				<section>
+					<h2>Class Balance Accuracy</h2>
+					$CBA =\frac{\sum_{i=1}^{k} \frac{C_{ii}}{max(C_{i.}, C_{.i}) } }{k}$
+					<p>where $C_{i.} = \sum_{j=1}^{k} C_{ij} $ and $C_{.i} = \sum_{i=1}^{k} C_{ji} $. </p>
+					<p>Cut-off value is usually 0.5</p>
+				</section>
+
+				<section>
+					<h2>Contents</h2>
+					<ul>
+						<li>Motivation</li>
+						<li><span style="color:#1b91ff;">Introduction</span>
+							<ul>
+								<li>Classifier - Decision tree</li>
+								<li>Assess metric</li>
+								<li class="fragment highlight-blue">Nature of problem</li>
+							</ul>
+						</li>
+						<li>Methodology</li>
+						<li>Experimental results</li>
+						<li>Conclusion and future research</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Nature of problem</h2>
+					<img height="450px" data-src="img/problems.png">
+					<p><span class="fragment">overlap,</span> <span class="fragment">disjunct rules,</span> <span class="fragment">within-class imbalance.</span></p>
+				</section>
+
+				<section>
+					<h2>Contents</h2>
+					<ul>
+						<li>Motivation</li>
+						<li>Introduction</li>
 						<li class="fragment highlight-blue">Methodology</li>
 						<li>Experimental results</li>
 						<li>Conclusion and future research</li>
@@ -113,6 +246,7 @@
 					<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
+						<li>Introduction</li>
 						<li><span style="color:#1b91ff;">Methodology</span>
 							<ul>
 								<li class="fragment highlight-blue">Sampling</li>
@@ -162,6 +296,7 @@
 					<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
+						<li>Introduction</li>
 						<li><span style="color:#1b91ff;">Methodology</span>
 							<ul>
 								<li>Sampling</li>
@@ -214,6 +349,7 @@
 					<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
+						<li>Introduction</li>
 						<li><span style="color:#1b91ff;">Methodology</span>
 							<ul>
 								<li>Sampling</li>
@@ -259,6 +395,7 @@
 					<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
+						<li>Introduction</li>
 						<li>Methodology</li>
 						<li><span style="color:#1b91ff;">Experimental results</span>
 							<ul>
@@ -282,6 +419,7 @@
 				<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
+						<li>Introduction</li>
 						<li>Methodology</li>
 						<li><span style="color:#1b91ff;">Experimental results</span>
 							<ul>
@@ -309,7 +447,7 @@
 					<p class="fragment">The percentage of undersampling is not percentage of undersampling the entire majority class.</p>
 					<p class="fragment">Instead, it is to maintain percentage of majority class with respective to SMOTEd minority class. In another word, it <strong>depends</strong> on percentage of oversampling minority class.</p>
 					<p class="fragment">Artificially sets it to <strong>200%</strong>.</p>
-					<p class="fragment">If undersampling majority instances is more than its original training dataset, majority class would oversample with replacement.</p>
+					<p class="fragment"><strong>Note:</strong>if undersampling majority instances is more than its original training dataset, majority class would oversample with replacement.</p>
 				</section>
 
 				<section>
@@ -345,6 +483,7 @@
 				<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
+						<li>Introduction</li>
 						<li>Methodology</li>
 						<li><span style="color:#1b91ff;">Experimental results</span>
 							<ul>
@@ -379,6 +518,7 @@
 					<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
+						<li>Introduction</li>
 						<li>Methodology</li>
 						<li><span style="color:#1b91ff;">Experimental results</span>
 							<ul>
@@ -422,6 +562,7 @@
 				<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
+						<li>Introduction</li>
 						<li>Methodology</li>
 						<li><span style="color:#1b91ff;">Experimental results</span>
 							<ul>
@@ -481,7 +622,7 @@
 					<section>
 						<h2>Dataset: medical</h2>
 						<h4 style="float:left;">CBA Assess Metric</h4>
-						<h4 >AUC Assess Metric</h4>
+						<h4>AUC Assess Metric</h4>
 						<img width="450" data-src="img/medical_cba.png" style="float:left;">
 						<img width="450" data-src="img/medical_auc.png">	
 					</section>
@@ -493,6 +634,7 @@
 						<h2>Contents</h2>
 							<ul>
 								<li>Motivation</li>
+								<li>Introduction</li>
 								<li>Methodology</li>
 								<li>Experimental results</li>
 								<li style="color:#1b91ff;">Conclusion and future research</li>
@@ -533,6 +675,8 @@
 
 				transition: 'convex', // none/fade/slide/convex/concave/zoom
 
+				// math
+
 				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -540,8 +684,10 @@
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/math/math.js', async: true }
 				]
+
 			});
 
 		</script>
