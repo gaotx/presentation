@@ -15,10 +15,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- My css -->
+		<link rel="stylesheet" href="lib/css/main.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -41,7 +44,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h2>Combination approach of SMOTE and instance selection for imbalanced datasets</h2>
+					<h2>Hybrid method of SMOTE and instance selection for imbalanced datasets</h2>
 					<br>
 					<br>
 					<p>Tianxiang Gao</p>
@@ -51,59 +54,171 @@
 				</section>
 
 				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
+					<h2>Contents</h2>
+					<ul>
+						<li class="fragment highlight-blue">Motivation</li>
+						<li>Methodology</li>
+						<li>Experimental results</li>
+						<li>Conclusion and future research</li>
+					</ul>
 				</section>
 
 				<!-- Example of nested vertical slides -->
+
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
+						<h2>Motivation</h2>
+						<p>“Learning from Imbalanced Data Sets,” <a href="http://www.site.uottawa.ca/~nat/Workshop2000/workshop2000.html" target="_blank">Proc. Am. Assoc. for Artificial Intelligence (AAAI) Workshop</a>, N. Japkowicz, ed., 2000, (Technical Report WS-00-05).</p>
+						<p>“Workshop Learning from Imbalanced Data Sets II,” <a href="https://www.site.uottawa.ca/~nat/Workshop2003/workshop2003.html" target="_blank">Proc. Int'l Conf. Machine Learning</a>, N.V. Chawla, N. Japkowicz, and A. Kolcz, eds., 2003.</p>
+						<p>N.V. Chawla, N. Japkowicz, and A. Kolcz, “Editorial: Special Issue on Learning from Imbalanced Data Sets,” <a href="https://www.site.uottawa.ca/~nat/Research/explorations_cfp.html" target="_blank">ACM SIGKDD Explorations Newsletter</a>, vol. 6, no. 1, pp. 1-6, 2004.</p>
 						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<h2>fraud/intrusion detection</h2>
+						<p><img data-src="img/Credit-Card-Fraud.jpg"></p>
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+						<h2>Risk Management</h2>
+						<p><img data-src="img/risk-management.png"></p>
+					</section>
+					<section>
+						<h2>medical diagnosis/monitoring</h2>
+						<p><img data-src="img/medical-diagnosis.jpg"></p>
+					</section>
+					<section>
+						<h2>bioinformatics</h2>
+						<p><img data-src="img/bioinformatics.jpg"></p>
+					</section>
+					<section>
+						<h2>text categorization</h2>
+						<p><img data-src="img/text-categorization.gif"></p>
+					</section>
+					<section>
+						<h2>direct marketing</h2>
+						<p><img data-src="img/direct-marketing.png"></p>
 					</section>
 				</section>
 
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
+					<h2>Contents</h2>
+					<ul>
+						<li>Motivation</li>
+						<li class="fragment highlight-blue">Methodology</li>
+						<li>Experimental results</li>
+						<li>Conclusion and future research</li>
+					</ul>
 				</section>
 
 				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
+					<h2>Contents</h2>
+					<ul>
+						<li>Motivation</li>
+						<li>Methodology
+							<ul>
+								<li class="fragment highlight-blue">Sampling</li>
+								<li>Instance Selection</li>
+								<li>Hybrid method of SMOTE and Selection</li>
+							</ul>
+
+						</li>
+						<li>Experimental results</li>
+						<li>Conclusion and future research</li>
+					</ul>
 				</section>
 
 				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
+					<section>
+						<h2>Sampling</h2>
+						<ul>
+							<li>Undersampling</li>
+							<li>Oversampling</li>
+							<li>SMOTE</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Sampling</h2>
+						<p>Undersampling beats oversampling since oversamping causes the decision boundary too specific.</p>
+						<p>SMOTE is powerful method to improve the performance of classifiers by introducing synthetic minority samples.</p>
+					</section>
+
+					<section>
+						<h2>SMOTE</h2>
+						<img data-src="img/alg/SMOTE.png" style="max-height:550px;">
+					</section>
+
+				</section>
+
+				<section>
+					<h2>Contents</h2>
+					<ul>
+						<li>Motivation</li>
+						<li>Methodology
+							<ul>
+								<li>Sampling</li>
+								<li class="fragment highlight-blue">Instance Selection</li>
+								<li>Hybrid method of SMOTE and Selection</li>
+							</ul>
+
+						</li>
+						<li>Experimental results</li>
+						<li>Conclusion and future research</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Instance Selection</h2>
+						<p>Select subset of training dataset such that removes superfluous instances, maintain performances.
+						</p>
+					</section>
+
+					<section>
+						<h2> Wrapper and Filter</h2>
+						<p class="fragment"><em>Wrapper</em> selects a subset of instances based on accuracy of a predefined classifier. 
+						</p>
+						<p class="fragment"><em>Filter</em> ranks instances through non-classifier based function and then select the instances from the ranking.</p>
+					</section>
+
+					<section>
+						<h2> Greedy Selection</h2>
+						<p>Greedy selection is a two-steps wrapper method: generates a number of candidate subsets, and starts with one candidate subset and continuouly combines the other subsets if combining improves the performance of classifier.
+						</p>
+					</section>
+
+				</section>
+
+				<section>
+					<h2>Contents</h2>
+					<ul>
+						<li>Motivation</li>
+						<li>Methodology
+							<ul>
+								<li>Sampling</li>
+								<li>Instance Selection</li>
+								<li class="fragment highlight-blue">Hybrid method of SMOTE and Selection</li>
+							</ul>
+
+						</li>
+						<li>Experimental results</li>
+						<li>Conclusion and future research</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Instance Selection</h2>
+						<p>Select subset of training dataset such that removes superfluous instances, maintain performances.
+						</p>
+					</section>
+
+					<section>
+						<h2> Wrapper and Filter</h2>
+						<p class="fragment"><em>Wrapper</em> selects a subset of instances based on accuracy of a predefined classifier. 
+						</p>
+						<p class="fragment"><em>Filter</em> ranks instances through non-classifier based function and then select the instances from the ranking.</p>
+					</section>
+
 				</section>
 
 				<section data-markdown>
