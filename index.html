@@ -21,7 +21,7 @@
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<!-- My css -->
-		<link rel="stylesheet" href="lib/css/main.css">
+		<link rel="stylesheet" href="css/main.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -44,7 +44,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h2>Hybrid method of SMOTE and instance selection for imbalanced datasets</h2>
+					<h1>Hybrid method for imbalanced datasets</h1>
 					<br>
 					<br>
 					<p>Tianxiang Gao</p>
@@ -113,7 +113,7 @@
 					<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
-						<li>Methodology
+						<li><span style="color:#1b91ff;">Methodology</span>
 							<ul>
 								<li class="fragment highlight-blue">Sampling</li>
 								<li>Instance Selection</li>
@@ -127,33 +127,42 @@
 				</section>
 
 				<section>
-					<section>
-						<h2>Sampling</h2>
-						<ul>
-							<li>Undersampling</li>
-							<li>Oversampling</li>
-							<li>SMOTE</li>
-						</ul>
-					</section>
+					<h2>Sampling</h2>
+					<ul>
+						<li>Undersampling</li>
+						<li>Oversampling</li>
+						<li>SMOTE</li>
+					</ul>
+				</section>
 
-					<section>
-						<h2>Sampling</h2>
-						<p>Undersampling beats oversampling since oversamping causes the decision boundary too specific.</p>
-						<p>SMOTE is powerful method to improve the performance of classifiers by introducing synthetic minority samples.</p>
-					</section>
+				<section>
+					<h2>Sampling</h2>
+					<p>Undersampling beats oversampling since oversamping causes the decision boundary too specific.</p>
+					<p>SMOTE is powerful method to improve the performance of classifiers by introducing synthetic minority samples.</p>
+				</section>
 
+				<section>
 					<section>
 						<h2>SMOTE</h2>
 						<img data-src="img/alg/SMOTE.png" style="max-height:550px;">
 					</section>
 
+					<section>
+						<h2>SMOTE</h2>
+						<h4>tuning parameter</h4>
+						<ul>
+							<li>number of nearest neighbors</li>
+							<li>percentage of oversampling minority class</li>
+							<li>percentage of undersampling majority class</li>
+						</ul>						
+					</section>
 				</section>
 
 				<section>
 					<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
-						<li>Methodology
+						<li><span style="color:#1b91ff;">Methodology</span>
 							<ul>
 								<li>Sampling</li>
 								<li class="fragment highlight-blue">Instance Selection</li>
@@ -167,32 +176,45 @@
 				</section>
 
 				<section>
-					<section>
-						<h2>Instance Selection</h2>
-						<p>Select subset of training dataset such that removes superfluous instances, maintain performances.
-						</p>
-					</section>
+					<h2>Instance Selection</h2>
+					<p class="fragment">Selects subset of training dataset such that removes superfluous instances, maintain performances.
+					</p>
+				</section>
 
-					<section>
-						<h2> Wrapper and Filter</h2>
-						<p class="fragment"><em>Wrapper</em> selects a subset of instances based on accuracy of a predefined classifier. 
-						</p>
-						<p class="fragment"><em>Filter</em> ranks instances through non-classifier based function and then select the instances from the ranking.</p>
-					</section>
+				<section>
+					<h2> Wrapper and Filter</h2>
+					<p class="fragment"><em>Wrapper</em> selects a subset of instances based on accuracy of a predefined classifier. 
+					</p>
+					<p class="fragment"><em>Filter</em> ranks instances through non-classifier based function and then select the instances from the ranking.</p>
+				</section>
 
+				<section>
+					<h2> Greedy Selection</h2>
+					<p><span class="fragment">Greedy selection is a two-steps wrapper method:</span> <span class="fragment">generates a number of candidate subsets,</span> <span class="fragment"> and starts with one candidate subset</span> <span class="fragment">and continuouly combines the other subsets if combining improves the performance of classifier.</span>
+					</p>
+				</section>
+
+				<section>
 					<section>
 						<h2> Greedy Selection</h2>
-						<p>Greedy selection is a two-steps wrapper method: generates a number of candidate subsets, and starts with one candidate subset and continuouly combines the other subsets if combining improves the performance of classifier.
-						</p>
+						<p class="fragment"><img data-src="img/alg/instance_selection.png" style="max-height:550px;"></p>
 					</section>
 
+					<section>
+						<h2>Greedy Selection</h2>
+						<h4>tuning parameter</h4>
+						<ul>
+							<li>number of candidate subsets</li>
+							<li>size of each subset</li>
+						</ul>						
+					</section>
 				</section>
 
 				<section>
 					<h2>Contents</h2>
 					<ul>
 						<li>Motivation</li>
-						<li>Methodology
+						<li><span style="color:#1b91ff;">Methodology</span>
 							<ul>
 								<li>Sampling</li>
 								<li>Instance Selection</li>
@@ -206,287 +228,290 @@
 				</section>
 
 				<section>
+					<h2>Hybrid Method</h2>
+					<p>Hyrid method is a combination method of SMOTE and greedy selection.</p>
+					<p class="fragment">Firstly, SMOTEs the instances of minority class, and combines those synthetic instances with majority class.</p>
+					<p class="fragment">Secondly, selects the optimum subset from the SMOTEd instances as the final training dataset.</p>
+				</section>
+
+				<section>
 					<section>
-						<h2>Instance Selection</h2>
-						<p>Select subset of training dataset such that removes superfluous instances, maintain performances.
+						<h2> Hybrid Method</h2>
+						<p class="fragment"><img data-src="img/alg/hybrid.png">
 						</p>
 					</section>
 
 					<section>
-						<h2> Wrapper and Filter</h2>
-						<p class="fragment"><em>Wrapper</em> selects a subset of instances based on accuracy of a predefined classifier. 
-						</p>
-						<p class="fragment"><em>Filter</em> ranks instances through non-classifier based function and then select the instances from the ranking.</p>
+						<h2> Hybrid Method</h2>
+						<h4>tuning parameter</h4>
+						<ul>
+							<li>number of nearest neighbors</li>
+							<li>percentage of oversampling</li>
+							<li>percentage of undersampling</li>
+							<li>number of candidate subsets</li>
+							<li>size of each subset</li>
+						</ul>
 					</section>
 
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
 				</section>
 
 				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
+					<h2>Contents</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>Motivation</li>
+						<li>Methodology</li>
+						<li><span style="color:#1b91ff;">Experimental results</span>
+							<ul>
+								<li class="fragment highlight-blue">Characteristics of Datasets</li>
+								<li>SMOTEd Training Datasets</li>
+								<li>Greedy-Selected Training Datasets</li>
+								<li>Hybrid-Selected Trianing Datasets</li>
+							</ul>
+						</li>
+						<li>Conclusion and future research</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
+					<h2>Characteristics of Datasets</h2>
+					<p>4 well-known imbalanced datasets in UCI, and one medical dataset</p>
+					<img data-src="img/data.png" class="fragment">
 				</section>
 
 				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
+				<h2>Contents</h2>
 					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+						<li>Motivation</li>
+						<li>Methodology</li>
+						<li><span style="color:#1b91ff;">Experimental results</span>
+							<ul>
+								<li>Characteristics of Datasets</li>
+								<li class="fragment highlight-blue">SMOTEd Training Datasets</li>
+								<li>Greedy-Selected Training Datasets</li>
+								<li>Hybrid-Selected Trianing Datasets</li>
+							</ul>
+						</li>
+						<li>Conclusion and future research</li>
 					</ul>
+				</section>
+				
+				<section>
+					<h2>SMOTE Training Datasets</h2>
+					<h4 class="fragment">tuning parameters</h4>
+						<ul class="fragment">
+							<li>percentage of oversampling</li>
+							<li>percentage of undersampling</li>
+						</ul>
+				</section>
+
+				<section>
+					<h2>percentage of undersampling</h2>
+					<p class="fragment">The percentage of undersampling is not percentage of undersampling the entire majority class.</p>
+					<p class="fragment">Instead, it is to maintain percentage of majority class with respective to SMOTEd minority class. In another word, it <strong>depends</strong> on percentage of oversampling minority class.</p>
+					<p class="fragment">Artificially sets it to <strong>200%</strong>.</p>
+					<p class="fragment">If undersampling majority instances is more than its original training dataset, majority class would oversample with replacement.</p>
+				</section>
+
+				<section>
+					<h2>percentage of oversampling</h2>
+					<p class="fragment">We implemented <em>10-fold cross validation</em> to select the optimum percentage of oversampling among 100% to 1000%.</p>
+					<p class="fragment">We used both accuracy and Area Under Curve (AUC) as assess metric to evaluate performances.</p>
+				</section>
+
+				<section>
+					<h2>percentage of oversampling</h2>
+					<img class="fragment" data-src="img/10thROC.png">
+				</section>
+
+				<section>
+					<h2>percentage of oversampling</h2>
+					<img width="400" class="fragment" data-src="img/Acc.png" style="float:left;">
+					<img width="400" class="fragment" data-src="img/AUC.png" style="float:right;">
+				</section>
+
+				<section>
+					<h2>percentage of oversampling</h2>
+					<img class="fragment" data-src="img/acc_auc.png">
+					<p class="fragment">From the previous figures and this table, <strong>200%</strong> is the optimum oversampling percentage for <em>yearst5</em> dataset since it has best AUC, competitive accuracy, and simpler.</p>
+				</section>
+
+				<section>
+					<h2>percentage of oversampling</h2>
+					<p>Based on the strategy, the best optimum setting for each dataset is listed in the table.</p>
+					<img class="fragment" data-src="img/best_smote.png">
+				</section>
+
+				<section>
+				<h2>Contents</h2>
+					<ul>
+						<li>Motivation</li>
+						<li>Methodology</li>
+						<li><span style="color:#1b91ff;">Experimental results</span>
+							<ul>
+								<li>Characteristics of Datasets</li>
+								<li>SMOTEd Training Datasets</li>
+								<li class="fragment highlight-blue">Greedy-Selected Training Datasets</li>
+								<li>Hybrid-Selected Trianing Datasets</li>
+							</ul>
+						</li>
+						<li>Conclusion and future research</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Greedy Selection</h2>
+					<h4 class="fragment">tuning parameters</h4>
+						<ul class="fragment">
+							<li>number of candidate subset</li>
+							<li>size of each candiate subset</li>
+						</ul>
+				</section>
+
+				<section>
+					<h2>tuning parameters</h2>
+					<p>Usually over 90 percent of time comsuming is to find approporate tuning parameters. It's not very efficient.</p>
+					<p><span class="fragment">Instead, we simply divided a dataset into 100 parts.</span> <span class="fragment">Then, in each part, the size of subset has been fixed automatically.</span></p>
+					<p class="fragment">The key is to choose an appropriate <strong>assess metric</strong>.</p>
+				</section>
+
+				
+				<section>
+					<h2>Contents</h2>
+					<ul>
+						<li>Motivation</li>
+						<li>Methodology</li>
+						<li><span style="color:#1b91ff;">Experimental results</span>
+							<ul>
+								<li>Characteristics of Datasets</li>
+								<li>SMOTEd Training Datasets</li>
+								<li>Greedy-Selected Training Datasets</li>
+								<li class="fragment highlight-blue">Hybrid-Selected Trianing Datasets</li>
+							</ul>
+						</li>
+						<li>Conclusion and future research</li>
+					</ul>
+				</section>
+					
+				<section>
+					<h2>Hybrid-Selected Trianing Datasets</h2>
+					<h4 class="fragment">tuning parameters</h4>
+						<ul class="fragment">
+							<li>number of nearest neighbors</li>
+							<li>percentage of oversampling</li>
+							<li>percentage of undersampling</li>
+							<li>number of candidate subsets</li>
+							<li>size of each candidate subset</li>
+						</ul>
+				</section>
+					
+				<section>
+					<h2>tuning parameters</h2>
+					<p>Usually assigns <strong>5</strong> to number of nearest neighbors.</p>
+					<p>Implement same strategy to set up the number of candidate subsets, and size of each candidate subset.</p>
+					<p>Also use <strong>10-fold cross validation</strong> to choose the optimum sampling percentages.</p>
+				</section>
+
+				<section>
+					<h2>tunning parameters</h2>
+					<p>Based on the strategy, the best optimum setting for each dataset is listed in the table.</p>
+					<img class="fragment" data-src="img/best_hybrid.png">
+				</section>
+
+				
+				<section>
+				<h2>Contents</h2>
+					<ul>
+						<li>Motivation</li>
+						<li>Methodology</li>
+						<li><span style="color:#1b91ff;">Experimental results</span>
+							<ul>
+								<li>Characteristics of Datasets</li>
+								<li>SMOTEd Training Datasets</li>
+								<li>Greedy-Selected Training Datasets</li>
+								<li>Hybrid-Selected Trianing Datasets</li>
+								<li class="fragment highlight-blue">Results</li>
+							</ul>
+						</li>
+						<li>Conclusion and future research</li>
+					</ul>
+				</section>
+					
+				<section>	
+					<section>
+						<h2>Results</h2>
+						<p class="fragment">Randomly select <strong>4/5</strong> of a dataset as original training dataset, and the rest is testing dataset.</p>
+						<p class="fragment">Implement those strategies to preprocess the dataset and we got four different training datasets: <strong>Control, Greedy Selection, SMOTE, and Hybrid</strong>.</p>
+						<p class="fragment">Fit those four different training datasets through regular <strong>decision tree</strong>.</p>
+						<p class="fragment">Predict the fit onto the identical test dataset.</p>
+						<p class="fragment">Process these steps over <strong>100</strong> times among each dataset. Then, evaluate predications through computing <strong>AUC, CBA, and accuracy</strong>.</p>
+					</section>
+
+					<section>
+						<h2>Dataset: g7</h2>
+						<h4 style="float:left;">CBA Assess Metric</h4>
+						<h4 >AUC Assess Metric</h4>
+						<img width="450" data-src="img/g7_cba.png" style="float:left;">
+						<img width="450" data-src="img/g7_auc.png">	
+					</section>
+
+					<section>
+						<h2>Dataset: seg1</h2>
+						<h4 style="float:left;">CBA Assess Metric</h4>
+						<h4 >AUC Assess Metric</h4>
+						<img width="450" data-src="img/seg1_cba.png" style="float:left;">
+						<img width="450" data-src="img/seg1_auc.png">	
+					</section>
+
+					<section>
+						<h2>Dataset: car3</h2>
+						<h4 style="float:left;">CBA Assess Metric</h4>
+						<h4 >AUC Assess Metric</h4>
+						<img width="450" data-src="img/car3_cba.png" style="float:left;">
+						<img width="450" data-src="img/car3_auc.png">	
+					</section>
+					
+					<section>
+						<h2>Dataset: yeast5</h2>
+						<h4 style="float:left;">CBA Assess Metric</h4>
+						<h4 >AUC Assess Metric</h4>
+						<img width="450" data-src="img/yeast5_cba.png" style="float:left;">
+						<img width="450" data-src="img/yeast5_auc.png">	
+					</section>
+
+					<section>
+						<h2>Dataset: medical</h2>
+						<h4 style="float:left;">CBA Assess Metric</h4>
+						<h4 >AUC Assess Metric</h4>
+						<img width="450" data-src="img/medical_cba.png" style="float:left;">
+						<img width="450" data-src="img/medical_auc.png">	
+					</section>
+					
+				</section>
+
+				<section>
+					<section>
+						<h2>Contents</h2>
+							<ul>
+								<li>Motivation</li>
+								<li>Methodology</li>
+								<li>Experimental results</li>
+								<li style="color:#1b91ff;">Conclusion and future research</li>
+							</ul>
+					</section>
+					<section>
+						<h2>Conclusion and future research</h2>
+						<ul>
+							<li>Hybrid method makes classifiers work better.</li>
+							<li>Efficient and very fast.</li>
+							<li>Flexible since it has varied settings.</li>
+							<li>Selecting an appropriate assess metric is essential for wrapper-baseed method.</li>
+							<li>Comprehensive assess metric is better.</li>
+						</ul>
+					</section>
 				</section>
 
 				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
+					<h1>Questions?</h1>
 				</section>
 
 			</div>
@@ -506,7 +531,7 @@ Reveal.addEventListener( 'customevent', function() {
 				history: true,
 				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
