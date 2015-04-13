@@ -44,8 +44,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Hybrid classification method for imbalanced datasets</h1>
-					<br>
+					<h2>Hybrid classification method for imbalanced datasets</h1>
 					<br>
 					<p>Tianxiang Gao</p>
 					<p>
@@ -311,7 +310,7 @@
 				<section>
 					<h2>Nature of problem</h2>
 					<img height="450px" data-src="img/problems.png">
-					<p><span class="fragment">overlap,</span> <span class="fragment">within-class imbalance,</span> <span class="fragment"> disjunct rules.</span></p>
+					<p><span class="fragment">overlap,</span> <span class="fragment">within-class imbalance,</span> <span class="fragment"> disjunct rules,</span> <span class="fragment">authenticity of data.</span></p>
 				</section>
 
 				<section>
@@ -372,8 +371,10 @@
 					<section>
 						<h2>SMOTE</h2>
 						<img data-src="img/SMOTE.png" style="max-height:550px;">
-						<p>continuous - $x_{new}=x_i+(\hat{x}_i-x_i)\times \delta$</p>
+						<p style="text-align:right; font-size: 20px"> - He, Haibo, <i>Learning from imbalanced datasets</i></p>
+						<p>Continuous - $x_{new}=x_i+(\hat{x}_i-x_i)\times \delta$</p>
 						<p>Categorical - $x_{new}=majorityVote(x_i)$</p>
+
 					</section>
 
 					<section>
@@ -513,7 +514,7 @@
 					<h2>Characteristics of Datasets</h2>
 					<p>4 well-known imbalanced datasets in UCI, and one medical dataset</p>
 					<img data-src="img/data.png">
-					<p style="text-align:right;"> - Chawla, Nitesh V., Nathalie Japkowicz, Haibo He.</p>
+					<p style="text-align:right; font-size: 20px"> - Chawla, Nitesh V., Nathalie Japkowicz, Haibo He.</p>
 				</section>
 
 				<section>
@@ -569,9 +570,17 @@
 				</section>
 
 				<section>
-					<h2>percentage of oversampling</h2>
-					<img width="400" class="fragment" data-src="img/Acc.png" style="float:left;">
-					<img width="400" class="fragment" data-src="img/AUC.png" style="float:right;">
+					<section>
+						<h2>percentage of oversampling</h2>
+						<img width="400" class="fragment" data-src="img/Acc.png" style="float:left;">
+						<img width="400" class="fragment" data-src="img/AUC.png" style="float:right;">
+					</section>
+
+					<section>
+						<h2>percentage of oversampling</h2>
+						<img width="400" data-src="img/AccBestHybrid.png" style="float:left;">
+						<img width="400" data-src="img/AUCbestHybridMedical.png" style="float:right;">
+					</section>
 				</section>
 
 				<section>
