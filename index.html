@@ -124,13 +124,13 @@
 				</section>
 
 				<section>
-					<section>
-						<h2>Classifier</h2>
-						<p><strong>Classification problem</strong> is to correctly classifiy the previously unseen <em>testing dataset</em> based on the given <em>training dataset</em>. We deal with <em>binary</em> cases, positive class and negative class.</p>
-						<p>An algorithm that implements classification is known as a <strong>Classifier</strong>.</p>
-						<p><strong>Decision tree</strong> is a tree-like classifier.</p>
-					</section>
+					<h2>Classifier</h2>
+					<p class="fragment highlight-current-blue"><strong>Classification problem</strong> is to correctly classifiy the previously unseen <em>testing dataset</em> based on the given <em>training dataset</em>. We deal with <em>binary</em> cases, positive class and negative class.</p>
+					<p class="fragment highlight-current-blue">An algorithm that implements classification is known as a <strong>Classifier</strong>.</p>
+					<p class="fragment highlight-current-blue"><strong>Decision tree</strong> is a tree-like classifier.</p>
+				</section>
 
+				<section>
 					<section>
 						<h2>Dataset of Playing Tennis</h2>
 						<table>
@@ -215,6 +215,21 @@
 						<li>To choose best classifier</li>
 					</ul>
 				</section>
+
+				<section>
+					<h2>Cutoff value</h2>
+					<p>Most algorithms classify via a 2-steps process:</p>
+					<ol>
+						<li>Compute probability of belonging to $positive$ class.</li>
+						<li>Compare to cutoff value, and classify accordingly.</li>
+					</ol>
+					<p>Default cutoff value is <em>0.5</em>
+					<ul>
+						<li>If >= 0.5, classify as $positive$.</li>
+						<li>If &lt; 0.5, classify as $negative$.</li>
+					</ul>
+					</p>
+				</section>
 				
 				<section>
 					<h2>Confusion Matrix</h2>
@@ -253,22 +268,6 @@
 					<p>False positive rate (FPR) $= \frac{FP}{FP + TN} $</p>
 				</section>
 
-
-				<section>
-					<h2>Cutoff value</h2>
-					<p>Most algorithms classify via a 2-steps process:</p>
-					<ol>
-						<li>Compute probability of belonging to $positive$ class.</li>
-						<li>Compare to cutoff value, and classify accordingly.</li>
-					</ol>
-					<p>Default cutoff value is <em>0.5</em>
-					<ul>
-						<li>If >= 0.5, classify as $positive$.</li>
-						<li>If &lt; 0.5, classify as $negative$.</li>
-					</ul>
-					</p>
-				</section>
-
 				<section>
 					<h2>ROC curve</h2>
 					<blockquote cite="http://en.wikipedia.org/wiki/Receiver_operating_characteristic">In statistics, a receiver operating characteristic (ROC), or ROC curve, is a graphical plot that illustrates the performance of a binary classifier system as its discrimination threshold is varied. The curve is created by plotting the true positive rate against the false positive rate at various threshold settings.
@@ -283,11 +282,38 @@
 				</section>
 
 				<section>
-					<h2>Class Balance Accuracy</h2>
-					$CBA =\frac{\sum_{i=1}^{k} \frac{C_{ii}}{max(C_{i.}, C_{.i}) } }{k}$
-					<p>where $C_{i.} = \sum_{j=1}^{k} C_{ij} $ and $C_{.i} = \sum_{i=1}^{k} C_{ji} $. </p>
-					<br>
-					<p style="text-align:right;"> -L. Mosley and S. Olafsson 2013.</p>
+					<section>
+						<h2>Class Balance Accuracy</h2>
+						$CBA =\frac{\sum_{i=1}^{k} \frac{C_{ii}}{max(C_{i.}, C_{.i}) } }{k}$
+						<p>where $C_{i.} = \sum_{j=1}^{k} C_{ij} $ and $C_{.i} = \sum_{i=1}^{k} C_{ji} $. </p>
+						<br>
+						<p style="text-align:right;"> -L. Mosley and S. Olafsson 2013.</p>
+					</section>
+
+					<section>
+						<h2>Confusion Matrix</h2>
+						<table>
+							<thead>
+								<tr>
+									<th></th>
+									<th>Predicted +</th>
+									<th>Predicted -</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>Actual +</th>
+									<td class="fragment highlight-blue">True Positive (TP)</td>
+									<td class="fragment highlight-current-blue">False Negative (FN)</td>
+								<tr>
+								<tr>
+									<th>Actual -</th>
+									<td class="fragment highlight-current-blue">False Positive (FP)</td>
+									<td class="fragment highlight-red">True Negative (TN)</td>
+								<tr>
+							</tbody>
+						</table>
+					</section>
 				</section>
 
 				<section>
@@ -310,7 +336,7 @@
 				<section>
 					<h2>Nature of problem</h2>
 					<img height="450px" data-src="img/problems.png">
-					<p><span class="fragment">Overlap,</span> <span class="fragment">within-class imbalance,</span> <span class="fragment"> disjunct rules,</span> <span class="fragment">authenticity of data.</span></p>
+					<p><span class="fragment highlight-current-blue">Overlap,</span> <span class="fragment highlight-current-blue">within-class imbalance,</span> <span class="fragment highlight-current-blue"> disjunct rules,</span> <span class="fragment highlight-current-blue">authenticity of data.</span></p>
 				</section>
 
 				<section>
@@ -345,8 +371,8 @@
 				<section>
 					<h2>Sampling</h2>
 					<ul>
-						<li>Undersampling</li>
-						<li>Oversampling (with replacement)</li>
+						<li class="fragment highlight-current-blue">Undersampling</li>
+						<li class="fragment highlight-current-blue">Oversampling (with replacement)</li>
 						<li>SMOTE</li>
 					</ul>
 				</section>
@@ -385,8 +411,8 @@
 						<ul>
 							<li>number of nearest neighbors</li>
 							<li>percentage of oversampling minority class</li>
-							<li>percentage of undersampling majority class</li>
-						</ul>						
+							<li class="fragment highlight-current-blue">percentage of undersampling majority class</li>
+						</ul>					
 					</section>
 				</section>
 
@@ -410,20 +436,20 @@
 
 				<section>
 					<h2>Instance Selection</h2>
-					<p class="fragment">Selects subset of training dataset such that removes superfluous instances, maintain performances.
+					<p>Selects subset of training dataset such that removes superfluous instances, maintain performances.
 					</p>
 				</section>
 
 				<section>
 					<h2> Wrapper and Filter</h2>
-					<p class="fragment"><strong>Wrapper</strong> selects a subset of instances based on accuracy of a predefined classifier. 
+					<p class="fragment highlight-current-blue"><strong>Wrapper</strong> selects a subset of instances based on accuracy of a predefined classifier. 
 					</p>
-					<p class="fragment"><strong>Filter</strong> ranks instances through non-classifier based function and then select the instances from the ranking.</p>
+					<p class="fragment highlight-current-blue"><strong>Filter</strong> ranks instances through non-classifier based function and then select the instances from the ranking.</p>
 				</section>
 
 				<section>
 					<h2> Greedy Selection</h2>
-					<p><span class="fragment">Greedy selection is a two-steps wrapper method:</span> <span class="fragment">generates a number of candidate subsets,</span> <span class="fragment"> and starts with one candidate subset</span> <span class="fragment">and continuouly combines the other subsets if combining improves the performance of classifier.</span>
+					<p><span class="fragment highlight-current-blue">Greedy selection is a two-steps wrapper method:</span> <span class="fragment highlight-current-blue">generates a number of candidate subsets,</span> <span class="fragment highlight-current-blue"> and starts with one candidate subset</span> <span class="fragment highlight-current-blue">and continuouly combines the other subsets</span> <span class="fragment highlight-current-blue">if combining improves the performance of classifier.</span>
 					</p>
 					<br>
 					<p style="text-align:right;"> - W. Bennette and S. Olafsson 2013.</p>
@@ -458,11 +484,16 @@
 
 				<section>
 					<h2>Hybrid Method</h2>
-					<p>Hyrid method is a combination method of SMOTE and greedy selection.</p>
-					<ol>
-						<li class="fragment">SMOTEs the instances of minority class, and combines those synthetic instances with majority class.</li>
-						<li class="fragment">selects the promising subset from the SMOTEd instances as the final training dataset.</li>
-					</ol>
+					
+					<ul>
+						<li>Hyrid method is a <strong>combination</strong> method of SMOTE and greedy selection.</p></li>
+						<li>
+							<ol>
+								<li class="fragment highlight-current-blue">SMOTE the instances of minority class, and combines those synthetic instances with majority class.</li>
+								<li class="fragment highlight-current-blue">Select the promising subset from the SMOTEd instances as the final training dataset.</li>
+							</ol>
+						</li>
+					</ul>
 				</section>
 
 				<section>
@@ -526,8 +557,8 @@
 				
 				<section>
 					<h2>SMOTE Training Datasets</h2>
-					<h4 class="fragment">tuning parameters</h4>
-						<ul class="fragment">
+					<h4>tuning parameters</h4>
+						<ul>
 							<li>number of nearest neighbors</li>
 							<li>percentage of oversampling</li>
 							<li>percentage of undersampling</li>
@@ -541,28 +572,28 @@
 
 				<section>
 					<h2>percentage of undersampling</h2>
-					<p class="fragment">The percentage of undersampling is not percentage of undersampling the entire majority class.</p>
-					<p class="fragment">Instead, it is to maintain percentage of majority class with respective to SMOTEd minority class. In another word, it <strong>depends</strong> on percentage of oversampling minority class.</p>
-					<p class="fragment">Arbitrarily sets it to <strong>200%</strong>.</p>
-					<p class="fragment"><strong>Note:</strong>if undersampling majority instances is more than its original instances, majority class would oversample with replacement.</p>
+					<p class="fragment highlight-current-blue">The percentage of undersampling is not percentage of undersampling the entire majority class.</p>
+					<p class="fragment highlight-current-blue">Instead, it is to maintain percentage of majority class with respective to SMOTEd minority class. In another word, it <strong>depends</strong> on percentage of oversampling minority class.</p>
+					<p class="fragment highlight-current-blue">Arbitrarily sets it to <strong>200%</strong>.</p>
+					<p class="fragment highlight-current-blue"><strong>Note:</strong>if undersampling majority instances is more than its original instances, majority class would oversample with replacement.</p>
 				</section>
 
 				<section>
 					<h2>percentage of oversampling</h2>
-					<p class="fragment">We implemented <em>10-fold cross validation</em> to select the promising percentage of oversampling among 100% to 1000%.</p>
-					<p class="fragment">We used both <strong>ACC</strong> and <strong>AUC</strong> as assessment metrics to evaluate performances.</p>
+					<p class="fragment highlight-current-blue">We implemented <em>10-fold cross validation</em> to select the promising percentage of oversampling among 100% to 1000%.</p>
+					<p class="fragment highlight-current-blue">We used both <strong>ACC</strong> and <strong>AUC</strong> as assessment metrics to evaluate performances.</p>
 				</section>
 
 				<section>
 					<h2>percentage of oversampling</h2>
-					<img class="fragment" data-src="img/10thROC.png">
+					<img data-src="img/10thROC.png">
 				</section>
 
 				<section>
 					<section>
 						<h2>percentage of oversampling</h2>
-						<img width="400" class="fragment" data-src="img/Acc.png" style="float:left;">
-						<img width="400" class="fragment" data-src="img/AUC.png" style="float:right;">
+						<img width="400" data-src="img/Acc.png" style="float:left;">
+						<img width="400" data-src="img/AUC.png" style="float:right;">
 					</section>
 
 					<section>
@@ -574,14 +605,14 @@
 
 				<section>
 					<h2>percentage of oversampling</h2>
-					<img class="fragment" data-src="img/acc_auc.png">
-					<p class="fragment">From the previous figures and this table, <strong>200%</strong> has been selected for <em>yearst5</em> dataset since it has highest AUC, competitive accuracy, more stable, and simpler.</p>
+					<img data-src="img/acc_auc.png">
+					<p >From the previous figures and this table, <strong>200%</strong> has been selected for <em>yearst5</em> dataset since it has highest AUC, competitive accuracy, more stable, and simpler.</p>
 				</section>
 
 				<section>
 					<h2>percentage of oversampling</h2>
 					<p>Based on the strategy, the selected percentages for all dataset are listed in the table.</p>
-					<img class="fragment" data-src="img/best_smote.png">
+					<img data-src="img/best_smote.png">
 				</section>
 
 				<section>
@@ -605,8 +636,8 @@
 				
 				<section>
 					<h2>Greedy Selection</h2>
-					<h4 class="fragment">tuning parameters</h4>
-						<ul class="fragment">
+					<h4 >tuning parameters</h4>
+						<ul>
 							<li>number of candidate subset</li>
 							<li>size of each candiate subset</li>
 						</ul>
@@ -614,9 +645,9 @@
 
 				<section>
 					<h2>tuning parameters</h2>
-					<p>Usually over <strong>90</strong> percent of time comsumption is to find approporate tuning parameters. It's not very efficient.</p>
-					<p><span class="fragment">Instead, we simply divided a dataset into <strong>100</strong> parts.</span> <span class="fragment">Then, in each part, the size of subset has been fixed automatically.</span></p>
-					<p class="fragment">The key is to choose an appropriate <strong>assessment metric</strong>.</p>
+					<p class="fragment highlight-current-red">Usually over <strong>90</strong> percent of time comsumption is to find approporate tuning parameters. It's not very efficient.</p>
+					<p><span class="fragment highlight-current-blue">Instead, we simply divided a dataset into <strong>100</strong> parts.</span> <span class="fragment highlight-current-blue">Then, in each part, the size of subset has been fixed automatically.</span></p>
+					<p class="fragment highlight-current-blue">The key is to choose an appropriate <strong>assessment metric</strong>.</p>
 				</section>
 
 				
@@ -640,8 +671,8 @@
 					
 				<section>
 					<h2>Hybrid-Selected Training Datasets</h2>
-					<h4 class="fragment">tuning parameters</h4>
-						<ul class="fragment">
+					<h4 >tuning parameters</h4>
+						<ul >
 							<li>number of nearest neighbors</li>
 							<li>percentage of oversampling</li>
 							<li>percentage of undersampling</li>
@@ -652,15 +683,15 @@
 					
 				<section>
 					<h2>tuning parameters</h2>
-					<p>Usually assigns <strong>5</strong> to number of nearest neighbors.</p>
-					<p>Also use <strong>10-fold cross validation</strong> to choose a good sampling percentages.</p>
-					<p>Separate dataset into <strong>100</strong> parts and the size of each candidate subsets has been fixed.</p>
+					<p class="fragment highlight-current-blue">Usually assigns <strong>5</strong> to number of nearest neighbors.</p>
+					<p class="fragment highlight-current-blue">Also use <strong>10-fold cross validation</strong> to choose a good sampling percentages.</p>
+					<p class="fragment highlight-current-blue">Separate dataset into <strong>100</strong> parts and the size of each candidate subsets has been fixed.</p>
 				</section>
 
 				<section>
 					<h2>tunning parameters</h2>
 					<p>Based on the strategy, the selected percentages for each dataset are listed in the table.</p>
-					<img class="fragment" data-src="img/best_hybrid.png">
+					<img data-src="img/best_hybrid.png">
 				</section>
 
 				<section>
@@ -681,17 +712,17 @@
 						<li>Conclusion and future research</li>
 					</ul>
 				</section>
-					
-				<section>	
-					<section>
-						<h2>Results</h2>
-						<p class="fragment">Randomly select <strong>4/5</strong> of a dataset as original training dataset, and the rest is testing dataset.</p>
-						<p class="fragment">Implement those strategies to preprocess the dataset and we got four different training datasets: <strong>Control, Greedy Selection, SMOTE, and Hybrid</strong>.</p>
-						<p class="fragment">Fit those four different training datasets through regular <strong>decision tree</strong>.</p>
-						<p class="fragment">Predict the fit onto the identical test dataset.</p>
-						<p class="fragment">Process these steps over <strong>100</strong> times among each dataset. Then, evaluate predications through computing <strong>AUC, CBA, and ACC</strong>.</p>
-					</section>
+						
+				<section>
+					<h2>Results</h2>
+					<p class="fragment highlight-current-blue">Randomly select <strong>4/5</strong> of a dataset as original training dataset, and the rest is testing dataset.</p>
+					<p class="fragment highlight-current-blue">Implement those strategies to preprocess the dataset and we got four different training datasets: <strong>Control, Greedy Selection, SMOTE, and Hybrid</strong>.</p>
+					<p class="fragment highlight-current-blue">Fit those four different training datasets through regular <strong>decision tree</strong>.</p>
+					<p class="fragment highlight-current-blue">Predict the test dataset.</p>
+					<p class="fragment highlight-current-blue">Process these steps over <strong>100</strong> times among each dataset. Then, evaluate predications through computing <strong>AUC, CBA, and ACC</strong>.</p>
+				</section>
 
+				<section>
 					<section>
 						<h2 >Dataset: G7</h4>
 						<img data-src="img/g7_cba.png">
