@@ -384,7 +384,7 @@
 					If replicate the minority class, the decision region for the minority class becomes very <strong>specific</strong> and will cause new splits in the decision tree...in essence, <strong>overfitting</strong>.
 					<br>
 					<br>
-					Replication of the minority class does not cause its decision boundary to spread into the majority class regin.
+					Replication of the minority class does not cause its decision boundary to spread into the majority class region.
 					</blockquote>
 					<p style="float:right;"> - Chawla, Nitesh V., et al 2002.</p>
 				</section>
@@ -444,7 +444,7 @@
 					<h2> Wrapper and Filter</h2>
 					<p class="fragment highlight-current-blue"><strong>Wrapper</strong> selects a subset of instances based on accuracy of a predefined classifier. 
 					</p>
-					<p class="fragment highlight-current-blue"><strong>Filter</strong> ranks instances through non-classifier based function and then select the instances from the ranking.</p>
+					<p class="fragment highlight-current-blue"><strong>Filter</strong> ranks instances through non-classifier based function and then selects the instances from the ranking.</p>
 				</section>
 
 				<section>
@@ -489,8 +489,8 @@
 						<li>Hyrid method is a <strong>combination</strong> method of SMOTE and greedy selection.</p></li>
 						<li>
 							<ol>
-								<li class="fragment highlight-current-blue">SMOTE the instances of minority class, and combines those synthetic instances with majority class.</li>
-								<li class="fragment highlight-current-blue">Select the promising subset from the SMOTEd instances as the final training dataset.</li>
+								<li class="fragment highlight-current-blue">Generate synthetic instances for minority class, and combines those synthetic instances with majority instances.</li>
+								<li class="fragment highlight-current-blue">Select the ideal subset from the SMOTEd instances by using greedy selection as the final training dataset.</li>
 							</ol>
 						</li>
 					</ul>
@@ -580,14 +580,14 @@
 
 				<section>
 					<h2>percentage of oversampling</h2>
-					<p class="fragment highlight-current-blue">We implemented <em>10-fold cross validation</em> to select the promising percentage of oversampling among 100% to 1000%.</p>
+					<p class="fragment highlight-current-blue">We implemented <em>10-fold cross validation</em> to select the ideal percentage of oversampling among 100% to 1000%.</p>
 					<p class="fragment highlight-current-blue">We used both <strong>ACC</strong> and <strong>AUC</strong> as assessment metrics to evaluate performances.</p>
 				</section>
 
-				<section>
+				<!--<section>
 					<h2>percentage of oversampling</h2>
 					<img data-src="img/10thROC.png">
-				</section>
+				</section>-->
 
 				<section>
 					<section>
